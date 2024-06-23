@@ -1,0 +1,54 @@
+                          Algorithme
+
+Concevoir un algorithme permettant de Calculer et d'afficher année par année,le montant du capital et des intérêt
+acquis pour une somme initial S francs,placée à T% pendant N année.
+Note: Il s'agit d'un intérêt composé.
+
+
+  - Posons le problème
+      - Saisir le capital initial (S), le taux d'intérêt (T) et le nombre d'année (N)
+      - Calculer le montant de l'intérêt et le nouveau capital obtenu à la fin de chaque année, et les afficher.
+
+Méthode
+      Soit un capital de 10000F, le taux d'intérêt=10% et le nombre d'année = 5 ans
+         A la première 1ère année,on a:
+            - intérêt= 10000*10/100 = 1000F
+              Le nouveau capital = 10000F + 1000F soit 11 000F
+         A la première 2è année,on a:
+            - intérêt= 11000*10/100 = 1100F
+              Le nouveau capital = 11000F + 1100F soit 12100F
+         A la première 3è année,on a:
+            - intérêt= 12100*10/100 = 1210F
+              Le nouveau capital = 12100F + 1210F soit 13310F
+         A la première 4è année,on a:
+            - intérêt= 13310*10/100 = 1331F
+              Le nouveau capital = 13310F + 1331F soit 14641F
+         A la première 5è année,on a:
+            - intérêt= 14641*10/100 = 1464,1F
+              Le nouveau capital = 14641F + 1464,1F soit 16105,1F
+
+Algorithme capital_interet;
+VAR
+  S,T,interet : REEL; (* S= Somme initale placée, T= Taux d'intérêt, interet= Montant des intérêts*)
+  N,i: ENTIER;        (* N le nombre d'année de placement et i= le compteur pour parcourir les années*) 
+DEBUT
+  AFFICHER("ENTRER LE CAPITAL INITIAL");
+  LIRE(S);
+  AFFICHER("ENTRER LE TAUX D'INTERET EN %");
+  LIRE(T);
+  AFFICHER("ENTRER LE NOMBRE D'ANNEE DE PLACEMENT");
+  LIRE(N);
+
+  POUR i <- 1 à N FAIRE
+    DPOUR 
+       interet <- S*T/100;
+       S <- S + interet; (* Le nouveau capital= précédant capital + montant des intérêt*)
+       AFFICHER("LE MONTANT DES INTERETS A LA FIN DE L'ANNEE N° ",i," EST",interet);
+       AFFICHER("LE MONTANT DU CAPITAL A LA FIN DE L'ANNEE N°",i," EST ",S);
+    FPOUR;
+FIN. 
+
+
+
+
+   
